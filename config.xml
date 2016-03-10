@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+        <name>criptopay</name>
+        <displayName><![CDATA[CriptoPay]]></displayName>
+        <version><![CDATA[3.0]]></version>
+        <description><![CDATA[Cripto-Pay.com: Accept payments with Bitcoin &amp; Altcoins]]></description>
+        <author><![CDATA[Cripto-Pay.com]]></author>
+        <tab><![CDATA[payments_gateways]]></tab>
+        <is_configurable>1</is_configurable>
+        <need_instance>1</need_instance>
+        <limited_countries></limited_countries>
+</module>
