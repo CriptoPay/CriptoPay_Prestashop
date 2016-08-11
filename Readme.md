@@ -10,6 +10,8 @@ If you are interested in becoming a maintainer of this project, please contact u
 
 Bitcoin payment plugin for PrestaShop using the cripto-pay.com service.
 
+[![Build Status](https://travis-ci.org/CriptoPay/CriptoPay_Prestashop.svg?branch=master)](https://travis-ci.org/CriptoPay/CriptoPay_Prestashop)
+
 
 ## Quick Start Guide
 
