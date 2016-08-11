@@ -4,6 +4,8 @@
   "keywords": ["prestashop","plugin","payment","ecommerce","bitcoin","blockchain","altcoin","criptopay"],
   "homepage": "https://github.com/CriptoPay/CriptoPay_Prestashop",
   "license": "Open Software License (OSL 3.0)",
+    "minimum-stability": "stable",
+  
   "authors": [
     {
       "name": "Cripto-Pay.com",
@@ -11,13 +13,32 @@
       "homepage": "https://cripto-pay.com/developers"
     }
   ],
+    "support": {
+        "email": "support@cripto-pay.com",
+        "issues": "https://github.com/CriptoPay/CriptoPay_Prestashop/issues",
+        "source": "https://github.com/CriptoPay/CriptoPay_Prestashop"
+    },
+  
   "require": {
-    "php": ">=5.3.2",
+    "php": ">=5.3",
     "ext-curl": "*",
-    "ext-json": "*"
+    "ext-json": "*",
+    "composer/installers": "~1.0"
   },
+    "require-dev": {
+        "phpmd/phpmd": "*",
+        "phpdocumentor/phpdocumentor": "*",
+        "phing/phing": "*",
+        "pdepend/pdepend" : "1.1.0",
+        "squizlabs/php_codesniffer": "*",
+        "phpunit/phpunit": "*",
+        "phploc/phploc": "*",
+        "phpunit/phpunit-skeleton-generator": "*"
+    },
+  
   "config": {
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "bin-dir": "bin"
   },
-  "type": "prestashop-module"
+  "type": "whmcs-plugin"
 }
