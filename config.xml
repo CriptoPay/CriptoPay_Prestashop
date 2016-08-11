@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>criptopay</name>
+	<displayName><![CDATA[Cripto-Pay.com]]></displayName>
+	<version><![CDATA[3.2.0]]></version>
+	<description><![CDATA[Accept Payments with Bitcoin and Blockahin currencies. ]]></description>
+	<author><![CDATA[Cripto-Pay.com]]></author>
+	<tab><![CDATA[payments_gateways]]></tab>
+        <confirmUninstall>Are you sure you want to stop accept payments?</confirmUninstall>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+</module>

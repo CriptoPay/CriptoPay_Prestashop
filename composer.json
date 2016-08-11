@@ -1,0 +1,23 @@
+{
+  "name": "criptopay/criptopay_prestashop",
+  "description": "PrestaShop module to cripto-pay.com",
+  "keywords": ["prestashop","plugin","payment","ecommerce","bitcoin","blockchain","altcoin","criptopay"],
+  "homepage": "https://github.com/CriptoPay/CriptoPay_Prestashop",
+  "license": "Open Software License (OSL 3.0)",
+  "authors": [
+    {
+      "name": "Cripto-Pay.com",
+      "email": "soporte@cripto-pay.com",
+      "homepage": "https://cripto-pay.com/developers"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.2",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "type": "prestashop-module"
+}

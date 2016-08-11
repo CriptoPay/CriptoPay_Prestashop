@@ -1,0 +1,224 @@
+OSL 3.0: A Better License for Open Source Software
+
+by Lawrence Rosen[*]
+
+There are many ways to license open source software. Given the attention paid recently to the General Public License (GPL) and its latest version (GPLv3), you may be interested to know that there are other licenses that satisfy the principles of free and open source software without the confusion and polemics that surround the GPL. Other open source licenses have been approved by Open Source Initiative and adopted by commercial companies and by open source projects. Most of those other licenses are professionally written by lawyers to express clearly the licensing objectives of software copyright and patent owners and to ensure that they are valid and enforceable in all important jurisdictions.
+
+I wrote one of those licenses, the Open Software License. The third version of this license, OSL 3.0, was approved by Open Source Initiative in 2005. This article explains why it is a better license for software than the GPL.
+
+Software licensors choose their licenses based upon their particular philosophy and business models, and they intend their licenses to define the expected behavior of their licensees around the world. Because philosophies and businesses differ, so do licenses. In the open source world, there are two general categories of licenses: (1) Those licenses that allow derivative works of the software to be used and distributed as part of proprietary programs, and (2) those that require derivative works to be distributed under the same open source license as the original. The BSD license is the archetype of the first kind, what I call academic licenses. The GPL (version 2) is the most popular of the second kind, the so-called reciprocal or copyleft licenses. The license philosophies of these two categories of licenses are inherently irreconcilable, the first being compatible with proprietary derivative works and the other not, but they each make a valid point about the freedom to copy, change, and use software. I pass no judgment between them, since it is a licensor's right to choose a license for his own copyrightable works, not his lawyer's choice.
+
+The complete text (which is shorter than this article) of OSL 3.0 and its companion licenses is posted at www.rosenlaw.com/OSL3.0-comparison.pdf.
+
+ 
+
+TABLE OF CONTENTS
+
+I.          Brief Overview of OSL 3.0 And Its Companion Licenses
+II.         Using OSL 3.0 For Copyrighted And Patented Software And Other Works
+III.       Becoming Bound To OSL 3.0
+IV.       Source Code And Derivative Works
+V.        Distribution Defined
+VI.       The Burdens Of Attribution In The Open Source World
+VII.      Warranties, Liability, And The Allocation Of Risk
+VIII.     Enforcing OSL 3.0 In Court
+IX.       Interactions Between OSL 3.0 And AFL 3.0
+X.        Conclusion
+ 
+
+I.           Brief Overview of OSL 3.0 And Its Companion Licenses
+
+Consistent with open source principles, nothing in OSL 3.0 prevents anyone from selling or giving away OSL-licensed software or making a profitable business from it. Furthermore, once a licensee receives an authorized copy of OSL-licensed software, that person can make and distribute free copies and derivative works—but only under OSL 3.0, because OSL 3.0 is a reciprocal open source license.
+
+Open Software License (OSL 3.0)
+
+OSL 3.0 is a reciprocal (or "copyleft") license. It imposes a reciprocal source code disclosure obligation similar to (but narrower than) that of the GPL: Under OSL 3.0, Derivative Works of OSL 3.0-licensed Original Works must themselves be licensed under OSL 3.0, and therefore the Source Code of those Derivative Works must be disclosed. [The capitalized phrases throughout this article are defined terms in OSL 3.0.]
+
+The key reciprocity concept is stated in the underlined portion of § 1(c), which authorizes distribution "with the proviso that copies of Original Work or Derivative Works that You distribute or communicate shall be licensed under this Open Software License." This simple statement of reciprocity, coupled with the definition of Derivative Works in § 1(b), has important effects on the use and re-distribution of OSL-based derivative works. I will explain this more fully at IV below, but in overview, OSL 3.0 is less onerous in this respect than the GPL. Indeed, OSL 3.0 functions more like the LGPL than the GPL in that it doesn't attempt to force the disclosure of the source code of independently-written software. Licensees under OSL 3.0 can be more certain when they must disclose source code and when they may keep their source code secret. This ambiguity of the GPL is eliminated from OSL 3.0.
+
+Academic Free License (AFL 3.0)
+
+OSL 3.0 has a companion license, the Academic Free License (AFL 3.0), that is identical to OSL 3.0 except for the reciprocal source code obligation: Under AFL 3.0, Derivative Works of AFL 3.0-licensed Original Works can be licensed under other licenses, and the Source Code of those Derivative Works need not be disclosed. In effect, then, AFL 3.0 is like the BSD license, with no reciprocal obligation to disclose source code. AFL 3.0 differs materially from OSL 3.0 only in that important underlined half-sentence in § 1(c), which now authorizes distribution "under any license of your choice that does not contradict the terms and conditions, including Licensor’s reserved rights and remedies, in this Academic Free License." In all other material respects, AFL 3.0 uses all the same definitions and, except for reciprocity, can be interpreted the same way as OSL 3.0. At the end of this article, I describe a few interesting uses of AFL 3.0 as a companion license to OSL 3.0 for open source projects.
+
+Non-Profit OSL 3.0
+
+There is also a new Non-Profit OSL 3.0, identical to OSL 3.0 except that: Under Non-Profit OSL 3.0, Licensor disclaims certain warranties and limits liability from certain types of damages. Those differences are summarized in § 17 of the Non-Profit OSL 3.0, a section that does not appear in OSL 3.0 or AFL 3.0. Because of § 17(a), only non-profit distributors may use the Non-Profit OSL 3.0 license.
+
+The other minor differences among OSL 3.0, AFL 3.0 and Non-Profit OSL 3.0 are highlighted on the copy of OSL 3.0 that is posted at www.rosenlaw.com/OSL3.0-comparison.pdf.
+
+II.         Using OSL 3.0 For Copyrighted And Patented Software And Other Works
+
+The primary goal of OSL 3.0 is to authorize recipients of an Original Work to exercise any of the licensor's copyright and patent rights in that Original Work for any purposes whatsoever, consistent with the fundamental principles of free and open source software. Licensees may freely distribute copies of the Original Work that they receive and Derivative Works that they create—but only under the reciprocity condition of the OSL 3.0 license.
+
+Copyrightable Works
+
+OSL 3.0 is intended to be used for licensing any “original work of authorship” (an "Original Work"). Despite the name Open Software License, OSL 3.0 can also be used for other types of copyrightable works besides software. This broad scope of the license is useful because software products, especially the collective works that are the compiled programs we buy and use everyday, are usually software accompanied by documentation, graphical displays, sound files, and other types of copyrightable works that can conveniently be aggregated and distributed collectively under the same license. Using separate licenses for these different kinds of interrelated works makes open source licensing too confusing, and it isn't consistent with today's best software engineering practices that expect software and its documentation to be integrated, or when documentation examples will be copied into the software as scripts or even code. That is why OSL 3.0 was designed to apply to all kinds of copyrightable works, as long as the Licensor designates the OSL 3.0 license adjacent to his or her copyright notice.
+
+Patentable Works
+
+Although OSL 3.0 authorizes the copying, modification and distribution of an expressive, copyrightable, original work of authorship [§ 1], the license also acknowledges that such works are useful—and patentable. Licensor's patent claims that read on the Original Work (and only those patent claims) are licensed along with the authorized copyrighted copy. [§ 2.] At the same time, the Licensor retains the defensive use of his patent claims; the OSL 3.0 license terminates automatically as to any licensee who asserts that the Original Work infringes one of that licensee's patent claims. [§ 10.]  This combination of an explicit but limited patent license, coupled with a defensive license termination provision that protects the Licensor from patent infringement lawsuits over his Original Work, fairly balances the intellectual property bargain between generous OSL 3.0 licensors and their licensees.
+
+By way of contrast, many early open source licenses, including GPL version 2, hardly mention patents. The scope of the patent grants and the patent defense provisions are uncertain in those licenses. GPLv3 went in the other direction and overreacted to certain patent issues involving Microsoft by reaching beyond simple defensive termination to impose other complex patent license conditions. Compare the patent provisions of OSL 3.0 to the patent provisions of the GPL variants; OSL 3.0 uses simpler and more precise language and reflects no political, anti-patent agenda. Further, it recognizes and respects patents and licenses them appropriately for open source purposes.
+
+Commercializing OSL 3.0 Software
+
+Many OSL 3.0 licensors also sell commercial versions of their open source software under commercial licenses. The last sentence of § 4 makes this opportunity explicit: "Nothing in this License shall be interpreted to prohibit Licensor from licensing under terms different from this License any Original Work that Licensor otherwise would have a right to license." Some licensors who own the necessary copyrights sell commercial copies of the exact same Original Works that are available under OSL 3.0, along with a waiver of the reciprocity/copyleft condition of § 1(c), for their customers who want to keep Derivative Works secret. The exclusions from the license grant, including the exclusion of other patent claims that can be licensed for other products or uses (§ 4), the absence of warranties (§ 7), and limitations of liability (§ 8), make it possible for licensors to sell services, warranties and other valuable products along with free copies of OSL-licensed software.
+
+III.      Becoming Bound To OSL 3.0
+
+Much has been written about whether open source licenses are contracts or merely licenses. My own view is that a software license becomes a contract through extrinsic formation events of offer and acceptance, not the intrinsic language of the license itself. But even if a license be not formed into a contract, there is no disadvantage to expressing that license in terms familiar to contract law. Even if contract law is not necessary to enforce copyright licenses, we gain much by using the language of contracts to express what copyright and patent licenses we intend to grant and what conditions of our licenses we expect the courts to enforce. (See more on this at VIII below.)
+
+Licenses And The Manifestation Of Assent
+
+Perhaps the most obvious linguistic difference between OSL 3.0 and the GPL licenses is that OSL 3.0 uses terms of art and expressions from contract law to say precisely what it means. There is nothing in OSL 3.0 itself, however, that requires the formation of a contract in order to grant—or to revoke the grant—of the license to the copyrighted work. Just as in the GPL, OSL 3.0 makes it clear that copyright law underlies the entire license: "This License conditions your rights to undertake the activities listed in Section 1, including your right to create Derivative Works based upon the Original Work, and doing so without honoring these terms and conditions is prohibited by copyright law and international treaty." [§ 9]
+
+There are benefits to the formation of contracts between licensors and their licensees, including reliance on court cases that guide us in the interpretation of contract language, and the opportunity to elect contract damages such as specific performance rather than just the monetary or injunctive relief provided by copyright law. To encourage contract formation, OSL 3.0 requires that downstream licensees who in turn distribute "must make a reasonable effort under the circumstances to obtain the express assent of recipients to the terms of this License." [§ 9] The definition of "reasonable effort" is intentionally vague, because no open source license is allowed to mandate any specific form of technology or any specific license acceptance procedure. Most open source projects and commercial distributors already use appropriate procedures to obtain the manifest assent of their licensees, so this OSL 3.0 requirement is not intended to require something different than what now happens in ordinary software distribution practice.
+
+Unilateral Contracts And Conditions
+
+So OSL 3.0 can be both a license and a contract, but at heart it is a license just like GPL or any other open source license, phrased in contract language.
+
+As a legal document, OSL 3.0 is drafted as a unilateral contract in which the Licensor makes certain promises and accepts certain obligations. In return, any licensee who accepts and uses the software must honor certain conditions. In a formal sense, in unilateral contracts licensees don't make promises, they merely honor conditions, and so you will find no language in OSL 3.0 to the effect that "licensee promises" anything at all. For example, the obligation to publish source code is an obligation of the Licensor, not a licensee. [§ 3] Reciprocity works indirectly: A licensee's right to distribute Derivative Works is conditioned upon licensing those Derivative Works under the same OSL 3.0 license, whereupon that licensee becomes a Licensor obligated by her own promise to publish Source Code. [§§ 1(c), 3]
+
+IV.      Source Code And Derivative Works
+
+The GPL has long confused lawyers about the scope of licensees' obligations to disclose source code. Debates rage to this day about how the GPL deals with static and dynamic linking and other esoteric techniques for making software work with other software. As a result, there isn't one GPL; there are GPL licenses with exceptions (such as for Linux, where dynamic linking to the Linux kernel is allowed), and even other versions such as the LGPL, which distinguishes "libraries" from other types of linked works. Even GPLv3 hasn't resolved that confusion; its authors see value in retaining the same fundamental bargain of GPLv2, namely that the source code of derivative works (defined broadly) must be published under the GPL. They did not want any clarification in GPLv3 that might narrow that copyleft obligation. The reciprocity and source code obligations of GPLv3 are still many paragraphs long, leading to continued confusion about the reach of its source code disclosure requirement.
+
+The OSL 3.0 Approach To Derivative Works
+
+OSL 3.0 is far simpler, with the entire copyright and copyleft bargain stated in a short § 1 that echoes the provisions of 17 USC 106 and similar copyright laws. Section 1(a) authorizes licensees to make "copies [of the Original Work], either alone or as part of a collective work", and § 1(b) authorizes licensees "to translate, adapt, alter, transform, modify, or arrange the Original Work, thereby creating derivative works ("Derivative Works") based upon the Original Work."
+
+Then § 1(c) requires any copies of that Original Work and any Derivative Works that are distributed to be distributed under OSL 3.0 and, for those works, the Licensor promises to provide Source Code [§ 3]. In this way, the OSL 3.0 license remains with the work and all its subsequent versions, and that software always remains open source. That's reciprocity.
+
+The definition of Derivative Works in § 1(b) is particularly important. For one thing, that defined term includes no reference whatsoever to linking or to any other technical manner of making programs interoperate. The verbs used in § 1(b) ["translate, adapt, alter, transform, modify, or arrange"] reflect the kinds of activities that we generally do to create derivative literary or other expressive works, and those things—not functional linking—create Derivative Works as defined in this license. As a result, linking an unchanged Original Work with another independently-written work does not, absent more, create a Derivative Work subject to § 1(b); such an act is merely the incorporation of a copy of that Original Work into a collective work, authorized by § 1(a).
+
+Source Code Disclosure
+
+Only the Source Code of the Original Work or the Source Code of a modified (altered, etc.) Derivative Work must be disclosed. [§§ 1(c), 3] The GPLv2 and GPLv3 ambiguities about linking are gone from OSL 3.0. The avoidance of technical terms of art such as "linking" and a definition of "Derivative Works" that relies on well-understood copyright verbs, are some of the reasons why OSL 3.0 imposes a less-burdensome reciprocity requirement than GPL.
+
+·       If linking (by whatever technical means) can be accomplished by making and using unmodified copies of the Original Work, then 1(a) and 1(c) permit that; only the Source Code of the Original Work must be disclosed.
+
+·       Otherwise, if modifications (or alterations, etc.) to the Original Work create a Derivative Work, then 1(b) and 1(c) permit that; only the Source Code of the modified (or altered, etc.) Derivative Work must be disclosed.
+
+·       As for independent works (in the copyright sense), or the independent components of collective works, the OSL 3.0 grant of copyright license in § 1 does not affect those works at all or place any source code requirements upon them. That independent source code need not be disclosed. In this respect, OSL 3.0 is more like LGPL than GPL in its effect, although it accomplishes that with far fewer words and far less uncertainty.
+
+Scope Of The Patent Grant
+
+The patent grant of § 2 does not allow OSL-licensed patent claims to be incorporated into independent works. The scope of the § 2 patent license is limited to claims that are embodied in the Original Work, and the Licensor authorizes those claims to be embodied by licensees only in the Original Work or Derivative Works—and because of reciprocity any of licensee's patent claims embodied in those Derivative Works will also be available to all under the reciprocal OSL 3.0.
+
+Patent owners under OSL 3.0 do not authorize their patent claims to be implemented in proprietary software.
+
+Disclosure Of Related Documentation
+
+Notice that the Source Code provision includes Licensor's promise to provide "all available documentation describing how to modify the Original Work," Licensor is not obligated to create such documents, but licensees are entitled to whatever such documentation is available. However, Licensor is not required to provide free documentation on how to use or install the work, thus leaving the Licensor free to make a business out of the sale of that kind of user documentation.
+
+V.         Distribution Defined
+
+The reference in § 1 to "distribute or communicate" should be read in conjunction with the definition of "External Deployment" in § 5.
+
+Physically delivering copies of software to third parties is obviously a distribution, but not all software is distributed that way. Software is often transmitted via networks. Sometimes only the results of the execution of the software are transmitted via networks while the software itself is accessed remotely. Users can connect their client computers to server computers, and the actual executable software may reside partly on the client and partly on the server, with functions performed in several places to achieve a desired result.
+
+External Deployment Defined
+
+OSL 3.0 requires that the External Deployment of software be treated the same as a distribution. The effect, of course, is that copies of the Original Work or Derivative Works that are externally deployed (i.e., that are used in-house to provide services to third parties) must be distributed reciprocally under OSL 3.0, just as if those third parties had received actual copies of the Original Work or Derivative Works.
+
+  Most other open source licenses treat such network uses of software as internal to the company that runs the server, and they don't require disclosure of source code. That is seen by many nowadays as a loophole that permits large online companies to avoid their reciprocal source code obligations.
+
+There is a version of GPL, the Affero GPL or AGPL, that also plugs the external deployment loophole, but that license brings along all the other baggage associated with the GPL that I've already criticized. The two-sentence External Deployment provision in OSL 3.0 [§ 5] plugs the loophole.
+
+Waiving The External Deployment Condition
+
+Notice also that External Deployment provision is phrased as a license condition rather than a promise of the licensee, consistent with the language of unilateral contracts. Licensors who philosophically or for business reasons wish to allow secret internal modifications to externally deployed OSL 3.0 software may simply waive this OSL 3.0 condition in a separate binding statement. Of course, licensors can only waive conditions as to OSL-licensed Original Works that they own or for which they have licensed the right to do so. (See my remarks about the use of AFL 3.0 at IX below.) I also advise that such OSL 3.0 license waiver statements be included in a prominent Attribution Notice in the Source Code, as described next, if those waivers are to apply to all licensees.
+
+VI.      The Burdens Of Attribution In The Open Source World
+
+There is an inherent conflict between the freedom of each licensee of open source software to change that work any way she pleases, and the desire of the author of the original software to have his creative work properly attributed to him by notices retained in that work. Section 6 of OSL 3.0 balances those requirements in what I believe is a fair way.
+
+Notices In Source Code
+
+A Licensor may place his copyright, patent, trademark, licensing or other Attribution Notices in his Source Code, and licensees can't remove those notices from the Source Code.
+
+Under copyright law, of course, and as authorized under OSL 3.0 § 1, the author of a Derivative Work may if she wishes insert her own copyright, patent, trademark and Attribution Notices into her own derivative Source Code. But OSL 3.0 also requires the author of a Derivative Work to inform recipients that it is not the same as the Original Work by inserting an appropriate Attribution Notice in her Source Code. [§ 6] This is intended to protect the original author's reputation concerning Derivative Works he didn't create.
+
+Other Notices
+
+Nothing in OSL 3.0 requires the addition or retention of specific copyright, patent, trademark or other notices in executable or object code versions of Derivative Works. However, in accordance with expected practices in the open source community, licensees should provide whatever notices are appropriate in order to fairly warn recipients that the Original Work or Derivative Works they receive remain subject to the terms and conditions of the copyright and patent licenses granted by the original Licensor(s) of those works (meaning the OSL 3.0 license itself, its patent defense and all other of Licensor(s) reserved rights and remedies under copyright and patent law).
+
+VII.    Warranties, Liability, And The Allocation Of Risk
+
+The original BSD license was created to serve one essential function: To disclaim warranties and limit liability for the software. The Regents of the University of California were obviously unwilling to accept any responsibility for a work that they gave away to the public for free. I am convinced that, had it not been for the need for warranty and liability disclaimers, the BSD license could have been replaced by a simple public domain dedication.
+
+Warranties Are Disclaimed And Liability Is Limited
+
+Open source licensors insist upon disclaiming warranties when they give away free software because they have no further control over the uses of that work and they often receive no revenue from it. They cannot afford to accept unknown downstream risks.
+
+The law says that distributors of software and other products must expressly disclaim warranties in prominent language. Thus we often see warranty disclaimers in all capital letters, making them harder rather than easier to read. OSL 3.0 uses capital letters only for the IMPORTANT WORDS, leaving the rest of the text more comprehensible. That is why "AS IS" and "DISCLAIMER OF WARRANTY" are capitalized, but the rest reads like English. [§ 7] Open source licensors also insist upon limiting liability, and OSL 3.0 does that too. [§ 8]
+
+The Warranty Of Provenance
+
+Meanwhile, open source licensees also deserve some protection from unscrupulous or disorganized licensors. The distribution of unlicensed and unauthorized software under the banner of "open source" cannot be condoned even if the software is declared "AS IS." That is why § 7 of OSL 3.0 contains a Warranty of Provenance. The provenance of open source software is determined by authorship (you have the right to distribute under OSL 3.0 an Original Work that you wrote yourself) or by license (you have the right to distribute someone else's original work under OSL 3.0 if its author permits you to do so). The Warranty of Provenance is Licensor's promise that the Original Work was written by or licensed to the Licensor and is being licensed (or sublicensed) under OSL 3.0 with authority.
+
+That promise of the Warranty of Provenance is enforceable against the Licensor. It is not a warranty of non-infringement, however, which is expressly disclaimed in the very next sentence of § 7. The Warranty of Provenance only promises that the Licensor vouches for his authorship of his own copyrighted works, and that he is giving you other authors' works as authorized by their licenses. It doesn't promise that those works from other authors are themselves non-infringing.
+
+Reduced Risk For Non-Profit Organizations
+
+Some licensors are non-profit organizations that derive no revenue whatsoever from the distribution of the Original Work or Derivative Works, or even from support or services associated with those works. As a simple economic matter, these organizations have no revenue stream and they cannot afford to offer any warranties, even a simple Warranty of Provenance. For those licensors, there is now a Non-Profit OSL 3.0 that doesn't include that warranty and that disclaims liability even for direct damages. The differences between OSL 3.0 and Non-Profit OSL 3.0 are detailed in § 17 of the Non-Profit OSL 3.0 license. Section 17 includes Licensor's representation that it is actually a non-profit organization. Note also that once an Original Work is distributed by a Licensor who cannot make that non-profit representation, the license reverts to OSL 3.0.
+
+Other Risk Mitigation Strategies
+
+There are two other risk mitigation provisions in OSL 3.0. The first is a provision that allows a prevailing party in a dispute to recover its costs and expenses, including attorney's fees. [§ 12] This provision has the effect of balancing the burdens, as between Licensor and his licensees, to enforce the license and protect the parties from each other. Were it not for an attorney's fees provision, smaller participants in the open source community would often have no effective means to enforce the promises and conditions in their licenses—especially when their software is distributed for free.
+
+The other, and perhaps more ambiguously worded, risk mitigation provision in OSL 3.0 is the Right to Use in § 15. "You may use the Original Work in all ways not otherwise restricted or conditioned by this License or by law, and Licensor promises not to interfere with or be responsible for such uses by You." This sentence replaces the various "export" and "dangerous use" provisions that one finds in other open source software licenses. In effect, the OSL 3.0 Licensor is conditioning the license upon licensee's obeying this license and the law, and Licensor promises not to be responsible for those uses.
+
+Whether courts will actually hold open source Licensors responsible for downstream uses of which they are unaware—despite the stated limitations of liability and their "AS IS" declarations in OSL 3.0 (and most other open source licenses)—probably depends on the facts of the case and local consumer protection laws.
+
+VIII. Enforcing OSL 3.0 In Court
+
+There are only a few reasonable choices for jurisdiction when disputes arise, and OSL 3.0 picks the most reasonable one for the Licensor: "[The] courts of a jurisdiction wherein the Licensor resides or in which Licensor conducts its primary business." [§ 11]
+
+The Licensor's Jurisdiction, Venue And Governing Law
+
+This was a carefully considered choice. Licensees are usually getting free software—or at least software they can freely copy—and to require a Licensor to chase his licensees all over the world in order to enforce his license seems unreasonable. When a licensor in France offers OSL 3.0-licensed software, and a licensee in Japan accepts that software and downloads it through the Internet, the jurisdiction for any disputes that arise shall be France.
+
+Of course, large software companies have offices all over the world where they conduct their "primary business," and so it is likely that commercially significant OSL-licensed software may be up for dispute in any of those jurisdictions where it is actively sold and used. In this way, OSL 3.0 remains consumer (licensee) friendly. When consumers acquire software through local distribution channels from local licensors, the license is enforceable against those licensors in local courts.
+
+Protecting Up-Stream Licensors
+
+Disputes such as defensive patent termination actions or copyright infringement proceedings involving up-stream licensors where Original Works have passed through many links in the chain of commerce will be enforceable in the jurisdictions of the up-stream licensors, as determined by that same § 11 of OSL 3.0.
+
+I discussed at III above the never-ending arguments in some legal circles about whether open source licenses are contracts. Section 11 of OSL 3.0 attempts to bound this issue, at least when the work is used after the OSL 3.0 license is terminated as to a specific licensee: "Any use of the Original Work outside the scope of this License or after its termination shall be subject to the requirements and penalties of copyright or patent law in the appropriate jurisdiction." But if either Licensor or licensee can prove the formation of a contract—with its offer, acceptance and consideration prerequisites—then the courts of the appropriate jurisdiction will, as dictated by their own governing law, apply contract law or copyright law to those issues, as appropriate, when enforcing OSL 3.0.
+
+IX.       Interactions Between OSL 3.0 And AFL 3.0
+
+AFL 3.0, of course, is a modern replacement for the BSD license. Any licensor who does not seek reciprocity can use AFL 3.0 to license his Original Work, while reserving for himself certain valuable rights and remedies. This too is an open source way of contributing free software to the public.
+
+License Lock-In And Contributor Agreements
+
+There is a fundamental problem with OSL 3.0 and all other reciprocal licenses. Once that license applies to an Original Work, that work and all its Derivative Works "shall be licensed under this Open Software License." [§ 1(c)]
+
+So when the legal environment evolves or when business needs change, the world is stuck with OSL-licensed software whose terms and conditions cannot be changed—except, of course, by their copyright owners. When the copyright owners are worldwide and diverse, licenses are difficult to change. A similar problem currently afflicts the Linux community, which is struggling to decide how or whether to convert from GPLv2 to GPLv3—or perhaps, as this article suggests, to a better open source license altogether!
+
+Many open source projects now deal with this problem by creating a separate regime for "contributor agreements." A contributor agreement typically allows the project some independence to select (and change) its project distribution license. I've always objected to separate contributor agreements because they require me to review and approve two different licensing documents, one that licenses the work from the author to the project, and another that licenses the work from the project to the public.
+
+Using AFL 3.0 As A Contributor Agreement
+
+This is also a function that can be performed by the Academic Free License. AFL 3.0 is identical to OSL 3.0 except that licensees are now free "to distribute or communicate copies of the Original Work and Derivative Works to the public, under any license of your choice that does not contradict the terms and conditions, including Licensor’s reserved rights and remedies, in this Academic Free License." That makes AFL 3.0 a suitable contributor license to other open source projects, especially (but not only) those projects distributing software under OSL 3.0. The project is then free to revise its outgoing license in accordance with its bylaws and charter as the times dictate.
+
+Instead of a contributor agreement, then, I often recommend that contributors offer their contribution to a project by placing the following notice adjacent to their copyright notice:
+
+Licensed to Project XYZ under the Academic Free License (AFL 3.0).
+
+This Article Is Open Source
+
+At some point after this article is first published in printed form by Computer Law Review International (CRi), I will republish it on my own website with this broader notice to the public next to my copyright notice:
+
+Licensed under the Open Software License (OSL 3.0).
+
+You will all then be free to make copies and derivative works. That's all it takes to make a copyrighted work open source.
+
+X.         Conclusion
+
+A copy of OSL 3.0 is available at www.rosenlaw.com/OSL3.0-comparison.pdf. It is shorter than either version of the GPL, contains no non-binding philosophical preamble, and each of its sixteen paragraphs relates specifically to an important legal issue of software ownership and licensing. OSL 3.0 is also shorter than this article that describes it. I encourage you to read OSL 3.0 first, before re-reading this paper. As the rule of evidence goes, "the document speaks for itself."
+
+
+[*] Copyright © 2007 Lawrence Rosen. Further information about the author is www.rosenlaw.com. This article is licensed to the public under the Open Software License (OSL 3.0).

@@ -1,0 +1,50 @@
+/**
+ * 2007-2016 Cripto-Pay.com
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to support@cripto-pay.com so we can send you a copy immediately.
+ *
+ *  @author    CriptoPay SL <soporte@cripto-pay.com>
+ *  @copyright 2007-2016 CriptoPay SL
+ *  @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ *  @version 3.2
+ *  @source https://github.com/CriptoPay/CriptoPay_Prestashop
+ */
+
+/**
+ * Don't forget to prefix your containers with your own identifier
+ * to avoid any conflicts with others containers.
+ */
+
+#criptopay_payment_button a {
+    background-color: #FBFBFB;
+    background: url(../img/cripto_icono.png) no-repeat #fbfbfb;
+    background-size: contain;
+    background-position-x: 3px;
+    background-position-y: -3px;
+}
+
+#criptopay_payment_button a:hover {
+	background-color: rgb(67,180,86);/*rgba(120,255,120,0.6);*/
+}
+
+#criptopay_payment_button a:after {
+	display: block;
+	content: "\f054";
+	position: absolute;
+	right: 15px;
+	margin-top: -11px;
+	top: 50%;
+	font-family: "FontAwesome";
+	font-size: 25px;
+	height: 22px;
+	width: 14px;
+	color: #777777;
+}
