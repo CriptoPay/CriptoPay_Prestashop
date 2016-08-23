@@ -47,10 +47,10 @@ class CriptopayPaymentModuleFrontController extends ModuleFrontController
             "divisa" => $currency->iso_code,      //Obligatorio
             "concepto" => "Pago ".Context::getContext()->shop->name, //Obligatorio
             "URL_OK" => $this->context->link->getModuleLink(
-            'criptopay',
-            'validation',
-            array('secure_key'=>$customer->secure_key),
-            true
+                'criptopay',
+                'validation',
+                array('secure_key'=>$customer->secure_key),
+                true
             ),
             "URL_KO" => $this->context->link->getPageLink('order', null, null, 'step=3')
         );
@@ -62,10 +62,10 @@ class CriptopayPaymentModuleFrontController extends ModuleFrontController
         }
         define('CP_DEBUG', true);
         $CRIPTOPAY = new CriptoPayApiRest(
-        Configuration::get('CRIPTOPAY_API_USER', null),
-        Configuration::get('CRIPTOPAY_API_PASSWORD', null),
-        _PS_MODULE_DIR_."/criptopay/certificados/",
-        $url
+            Configuration::get('CRIPTOPAY_API_USER', null),
+            Configuration::get('CRIPTOPAY_API_PASSWORD', null),
+            _PS_MODULE_DIR_."/criptopay/certificados/",
+            $url
         );
         //Agregamos los parámetros a la consulta
         $CRIPTOPAY->Set($pago);

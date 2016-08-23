@@ -15,7 +15,7 @@
  *  @author    CriptoPay SL <soporte@cripto-pay.com>
  *  @copyright 2007-2016 CriptoPay SL
  *  @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
- *  @version 3.2
+ *  @version 3.2.1
  *  @source https://github.com/CriptoPay/CriptoPay_Prestashop
  */
 
@@ -64,19 +64,25 @@ class CriptoPayOrders
         }
         
         $Order = new OrderCore($id_order);
+
         if ($Order->current_state != $payment_status) {
-            $history = new OrderHistory();
-            $history->id_order = (int) $id_order;
-
-            $history->changeIdOrderState((int) $payment_status, $history->id_order);
-
-            $history->addWithemail();
-            $history->save();
+            $Order->setCurrentState($payment_status);
+            $Order->save();
         }
         
         $sql = 'UPDATE `'._DB_PREFIX_.'criptopay_orders`
 			SET `estado` = \''.(int) $estado.'\'
 			WHERE `id_order` = \''.(int) $id_order.'\'';
+        Db::getInstance()->Execute($sql);
+    }
+    
+    public static function updatePago($id_pago, $estado, $divisa, $cantidad)
+    {
+        $sql = 'UPDATE `'._DB_PREFIX_.'criptopay_orders`
+			SET `estado` = \''.(int) $estado.'\',
+                        `divisa` = \''.(string) $divisa.'\',
+                        `cantidad` = \''.(float) $cantidad.'\'
+			WHERE `id_pago` = \''.(string) $id_pago.'\'';
         Db::getInstance()->Execute($sql);
     }
 }

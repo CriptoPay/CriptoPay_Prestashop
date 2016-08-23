@@ -59,6 +59,7 @@ class CriptoPayApiRest
         } else {
             $this->ApiServidor = "https://api.cripto-pay.com";
         }
+        //$this->ApiServidor = "https://developers.cripto-pay.com";
                 
         //Limpiamos el última slash para prevenir errores
         if (Tools::substr($this->ApiServidor, -1)=="/") {

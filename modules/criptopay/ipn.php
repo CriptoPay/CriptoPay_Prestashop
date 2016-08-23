@@ -36,11 +36,11 @@ if (Tools::getValue('apiuser') == Configuration::get('CRIPTOPAY_API_USER')) {
             Configuration::get('CRIPTOPAY_API_PASSWORD', null),
             _PS_MODULE_DIR_."/criptopay/certificados/",
             $url
-            );
+        );
         $dclaros = $CRIPTOPAY->Desencriptar(Tools::getValue('apiuser'));
         $actualizaciones = Tools::jsonDecode($dclaros, true);
         foreach ($actualizaciones as $idpago => $estado) {
-            CriptoPayOrders::updateOrder(CriptoPayOrders::getOrderByIdPago($idpago));
+            CriptoPayOrders::updateOrder(CriptoPayOrders::getOrderByIdPago($idpago)['id_order'],$estado);
         }
     }
 }

@@ -15,7 +15,7 @@
  *  @author    CriptoPay SL <soporte@cripto-pay.com>
  *  @copyright 2007-2016 CriptoPay SL
  *  @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
- *  @version 3.2
+ *  @version 3.2.1
  *  @source https://github.com/CriptoPay/CriptoPay_Prestashop
  */
 
@@ -32,7 +32,7 @@ class Criptopay extends PaymentModule
     {
         $this->name = 'criptopay';
         $this->tab = 'payments_gateways';
-        $this->version = '3.2.0';
+        $this->version = '3.2.1';
         $this->author = 'Cripto-Pay.com';
         $this->need_instance = 1;
         $this->module_key = '14bca04069a772275e398ee05d66939c';
@@ -53,7 +53,7 @@ class Criptopay extends PaymentModule
 
         $this->limited_currencies = array('EUR','USD','XBT','GBP');
         
-        $this->ps_versions_compliancy = array('min' => '1.6', 'max' => '1.6.99.99');
+        $this->ps_versions_compliancy = array('min' => '1.4', 'max' => '1.6.99.99');
         
         if (Configuration::get('CRIPTOPAY_API_USER', false) == false ||
                 Configuration::get('CRIPTOPAY_API_PASSWORD', false) == false) {
@@ -81,7 +81,7 @@ class Criptopay extends PaymentModule
             return false;
         }
 
-        Configuration::updateValue('CRIPTOPAY_LIVE_MODE', true);
+        Configuration::updateValue('CRIPTOPAY_LIVE_MODE', false);
 
         include(dirname(__FILE__).'/sql/install.php');
         
@@ -122,8 +122,8 @@ class Criptopay extends PaymentModule
     {
         Configuration::deleteByName('CRIPTOPAY_API_USER');
         Configuration::deleteByName('CRIPTOPAY_API_PASSWORD');
-        
-        include(dirname(__FILE__).'/sql/uninstall.php');
+        Configuration::deleteByName('CRIPTOPAY_API_CERT_PUB');
+        Configuration::deleteByName('CRIPTOPAY_API_CERT_PRIV');
         return parent::uninstall();
     }
 
@@ -195,12 +195,12 @@ class Criptopay extends PaymentModule
                         'values' => array(
                             array(
                                 'id' => 'active_on',
-                                'value' => true,
+                                'value' => 1,
                                 'label' => $this->l('Enabled')
                             ),
                             array(
                                 'id' => 'active_off',
-                                'value' => false,
+                                'value' => 0,
                                 'label' => $this->l('Disabled')
                             )
                         ),
@@ -208,10 +208,10 @@ class Criptopay extends PaymentModule
                     array(
                         'col' => 3,
                         'type' => 'text',
-                        'prefix' => '<i class="icon icon-envelope"></i>',
+                        'prefix' => '<i class="icon icon-user"></i>',
                         'desc' => $this->l('ID user of API'),
                         'name' => 'CRIPTOPAY_API_USER',
-                        'label' => $this->l('Email'),
+                        'label' => $this->l('API User'),
                     ),
                     array(
                         'col' => 3,
@@ -247,7 +247,7 @@ class Criptopay extends PaymentModule
     protected function getConfigFormValues()
     {
         return array(
-            'CRIPTOPAY_LIVE_MODE' => Configuration::get('CRIPTOPAY_LIVE_MODE', true),
+            'CRIPTOPAY_LIVE_MODE' => Configuration::get('CRIPTOPAY_LIVE_MODE', null),
             'CRIPTOPAY_API_USER' => Configuration::get('CRIPTOPAY_API_USER', null),
             'CRIPTOPAY_API_PASSWORD' => Configuration::get('CRIPTOPAY_API_PASSWORD', null),
             'CRIPTOPAY_API_CERT_PUB' => Configuration::get('CRIPTOPAY_API_CERT_PUB', null),
@@ -272,9 +272,10 @@ class Criptopay extends PaymentModule
                 $res = mkdir(_PS_MODULE_DIR_.'/criptopay/certificados', 0755, true);
                 if (!$res) {
                     throw new Exception(
-                    $this->l("Can't create directory criptopay/certificados,"
-                    . " it's necesary that create it manually, contact with your administrator.")
-                    );
+                        $this->l(
+                            "Can't create directory criptopay/certificados,"
+                            . " it's necesary that create it manually, contact with your administrator."
+                        ));
                 }
             }
             foreach ($_FILES as $key => $file) {
@@ -312,7 +313,7 @@ class Criptopay extends PaymentModule
      */
     public function hookPayment($params)
     {
-        if (!$this->active){
+        if (!$this->active) {
                 return;
         }
 

@@ -41,10 +41,10 @@ class CriptoPayLog
         $this->inicio = microtime(true);
         $this->NIVELMOSTRAR = (is_null($nivelmostrar))? $this->NIVELMOSTRAR:$nivelmostrar;
         $this->NIVELREGISTRO = (is_null($nivelregistro))? $this->NIVELREGISTRO:$nivelregistro;
-        $this->FICHERO = (is_null($fichero))? "logCriptoPayApiRest.csv":$fichero;
+        $this->FICHERO = (is_null($fichero))? _PS_MODULE_DIR_."/criptopay/logCriptoPayApiRest.csv":$fichero;
     }
     
-    protected static function Instancia($nivelmostrar = null, $nivelregistro = null, $fichero = "logCriptoPayApiRest.csv")
+    protected static function Instancia($nivelmostrar = null, $nivelregistro = null, $fichero = null)
     {
         if (is_null(self::$instancia)) {
             self::$instancia = new CriptoPayLog($nivelmostrar, $nivelregistro, $fichero);

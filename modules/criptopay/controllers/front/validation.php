@@ -42,6 +42,12 @@ class CriptopayValidationModuleFrontController extends ModuleFrontController
         $transaction = CriptoPayOrders::getOrderByIdPago(Tools::getValue('idpago'));
 
         $Cart = new Cart((int)$transaction['id_cart']);
+        if ($Cart->OrderExists())
+        {
+            $estado = $this->getEstadoPago(Tools::getValue('idpago'));
+            CriptoPayOrders::updateOrder($transaction['id_order'],$estado);
+            Tools::redirect("index.php?controller=order-confirmation");
+        }        
         $Customer = new Customer((int)$Cart->id_customer);
         
         if (Tools::getValue('secure_key') != $Customer->secure_key) {
@@ -76,20 +82,20 @@ class CriptopayValidationModuleFrontController extends ModuleFrontController
         }
 
         $amount = (float)$Cart->getOrderTotal(true, Cart::BOTH);
-            $this->module->validateOrder(
-            $Cart->id,
-            $payment_status,
-            $amount,
-            $this->module->displayName,
-            $message,
-            $transaction,
-            (int)Context::getContext()->currency->id,
-            false,
-            $Customer->secure_key
+                $this->module->validateOrder(
+                $Cart->id,
+                $payment_status,
+                $amount,
+                $this->module->displayName,
+                $message,
+                $transaction,
+                (int)Context::getContext()->currency->id,
+                false,
+                $Customer->secure_key
             );
         Tools::redirect(
-        'index.php?controller=order-confirmation&id_cart='.$Cart->id.
-        '&id_module='.$this->module->id.'&id_order='.$this->module->currentOrder.'&key='.$Customer->secure_key
+            'index.php?controller=order-confirmation&id_cart='.$Cart->id.
+            '&id_module='.$this->module->id.'&id_order='.$this->module->currentOrder.'&key='.$Customer->secure_key
         );
     }
 
@@ -102,18 +108,19 @@ class CriptopayValidationModuleFrontController extends ModuleFrontController
         }
         define('CP_DEBUG', true);
         $CRIPTOPAY = new CriptoPayApiRest(
-        Configuration::get('CRIPTOPAY_API_USER', null),
-        Configuration::get('CRIPTOPAY_API_PASSWORD', null),
-        _PS_MODULE_DIR_."/criptopay/certificados/",
-        $url
+            Configuration::get('CRIPTOPAY_API_USER', null),
+            Configuration::get('CRIPTOPAY_API_PASSWORD', null),
+            _PS_MODULE_DIR_."/criptopay/certificados/",
+            $url
         );
         $CRIPTOPAY->Set(array("idpago"=>$idpago));
 
-        $respuesta = $CRIPTOPAY->Get("PAGO", "ESTADO");
+        $respuesta = $CRIPTOPAY->Get("PAGO", "DETALLE");
         if ($respuesta->estado < 20) {
             //Si está incompleto o no pagado retornamos a la pasarela de pago
             Tools::redirect($CRIPTOPAY->getServidor().'/pago/'.$respuesta->idpago);
         }
+        CriptoPayOrders::updatePago($idpago, $respuesta->estado, $respuesta->recibido->divisa, $respuesta->recibido->cantidad);
         return $respuesta->estado;
     }
 }
