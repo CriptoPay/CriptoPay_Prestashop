@@ -15,7 +15,7 @@
  *  @author    CriptoPay SL <soporte@cripto-pay.com>
  *  @copyright 2007-2016 CriptoPay SL
  *  @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
- *  @version 3.2.1
+ *  @version 3.2.2
  *  @source https://github.com/CriptoPay/CriptoPay_Prestashop
  */
 
@@ -99,7 +99,7 @@ class Criptopay extends PaymentModule
             $order_state->color = '#FF9900';
             $order_state->hidden = false;
             $order_state->delivery = false;
-            $order_state->logable = true;
+            $order_state->logable = false;
             $order_state->invoice = false;
 
             if ($order_state->add()) {
@@ -277,11 +277,17 @@ class Criptopay extends PaymentModule
                             . " it's necesary that create it manually, contact with your administrator."
                         ));
                 }
+                copy(_PS_MODULE_DIR_.'/criptopay/index.php', _PS_MODULE_DIR_.'/criptopay/certificados/index.php');
             }
             foreach ($_FILES as $key => $file) {
                 if (!empty($file['name'])) {
-                    move_uploaded_file($file['tmp_name'], _PS_MODULE_DIR_.'/criptopay/certificados/'.$file['name']);
-                    Configuration::updateValue($key, $file['name']);
+                    if($finfo->file($file['tmp_name']) == "text/plain" &&
+                    (substr($file['name'],-3) == "crt" || substr($file['name'],-3) == "key") ){
+                        $move = move_uploaded_file($file['tmp_name'],__DIR__.'/certificados/'.$file['name']);
+                        Configuration::updateValue($key, $file['name']);
+                    }else{
+                        throw new Exception("Formato del fichero ".$file['name']." incorrecto ". $finfo->file($file['tmp_name']." "));
+                    }
                 }
             }
         }

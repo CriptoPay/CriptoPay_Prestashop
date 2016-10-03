@@ -2,7 +2,7 @@
 <module>
 	<name>criptopay</name>
 	<displayName><![CDATA[Cripto-Pay.com]]></displayName>
-	<version><![CDATA[3.2.1]]></version>
+	<version><![CDATA[3.2.2]]></version>
 	<description><![CDATA[Accept Payments with Bitcoin and Blockahin currencies. ]]></description>
 	<author><![CDATA[Cripto-Pay.com]]></author>
 	<tab><![CDATA[payments_gateways]]></tab>
